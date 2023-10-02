@@ -1,0 +1,19 @@
+.search {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
+.search input {
+    background-color: azure;
+    padding: 15px;
+    font-size: 18px;
+
+}
+
+.searchIcon {
+    display: grid;
+    padding: 15px;
+    color: azure;
+}

@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
+import SearchIcon from '@mui/icons-material/Search';
+import './SearchBar.css'
 
 function SearchBar() {
 const [searchInput,  setSearchInput] = useState('');
 return(
-    <>
-    <form>
-        <label for="search">Search</label>
+    
+    
+       <div className='search'>
+        <div className='searchInput'>
         <input id="search" type="text" placeholder="search"/>
-    </form>
-    </>
+        </div>
+        <div className='searchIcon'>
+            <SearchIcon />
+        </div>
+      
+        </div>
+       
+  
+    
 )
 }
 
