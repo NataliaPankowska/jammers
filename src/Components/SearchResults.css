@@ -1,0 +1,27 @@
+.searchResults{
+    float: right;
+    background-color: azure;
+    padding: 30px;
+    width: 30%;
+    text-align: left;
+    height: 50vh;
+    overflow: hidden;
+    overflow-y: auto;
+    margin: 30px;
+}
+
+.result {
+    padding: 15px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(5, 5, 84);
+}
+
+.artist {
+    font-size: 14px;
+    font-weight: 400;
+    color: brown;
+}
