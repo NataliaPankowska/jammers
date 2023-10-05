@@ -49,19 +49,21 @@ const [searchResult, setSearchResult] = useState([]);
 
 
 useEffect(() => {
-    const newResult = data.filter((it) => it.title.includes({result}));
-    console.log(newResult);
+    const newResult = data.filter((item) => {
+        return item.title.includes({result})
+});
+    console.log({result});
     setSearchResult(newResult)}, [{result}]);
 // setSearchResult(selectedData);
-function handleClick() {
-    console.log('bbb')
-}
+// function handleClick() {
+//     // console.log('bbb')
+// }
 
 
 return (
     <>
    <h1>{searchResult}</h1>
-   <button onClick={handleClick}>consolelog</button>
+   {/* <button onClick={handleClick}>consolelog</button> */}
     <div className='searchResults'>
          
         {data.map((song) => 

@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import './SearchBar.css';
 import SearchResults from './SearchResults';
 
 function SearchBar() {
 const [searchInput,  setSearchInput] = useState('');
-function handleType(e){
-    setSearchInput(e.target.value);
-}
+
+    function handleType(e)  {
+        setSearchInput(e.target.value);
+        
+    }
+
+
 return(
     <>
         <SearchResults result={searchInput}/>
