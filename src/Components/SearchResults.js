@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import './SearchResults.css';
+import { Search } from '@mui/icons-material';
 
-function SearchResults(){
-const [searchResult, setSearchResult] = useState([
+const data = [
     {
         title: 'Perhaps, perhaps',
         artist: 'Dusty Springfield'
@@ -36,10 +36,31 @@ const [searchResult, setSearchResult] = useState([
         title: 'Śmierć Poety',
         artist: 'Kazik Staszewski'
     }
-])
-const data = searchResult;
-console.log(data);
+];
+function SearchResults({result}){
+const [searchResult, setSearchResult] = useState();
+const selectedData = [];
+for (let i = 0; i < data.length; i++) {
+    const item = data[i];
+    selectedData.push(item.title)
+    
+}
+selectedData.filter((item) => {
+    return item.includes()
+})
+
+
+useEffect(() => setSearchResult(selectedData));
+// setSearchResult(selectedData);
+function handleClick() {
+    console.log(selectedData)
+}
+
+
 return (
+    <>
+   <h1>{searchResult}</h1>
+   <button onClick={handleClick}>consolelog</button>
     <div className='searchResults'>
          
         {data.map((song) => 
@@ -49,8 +70,11 @@ return (
             </div>
         
         )}
+        
     </div>
+    </>
 )
 }
+
 
 export default SearchResults;

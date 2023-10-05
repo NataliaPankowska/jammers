@@ -1,0 +1,20 @@
+.player {
+    margin: 30px;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(35, 35, 249);
+
+}
+
+.constrols {
+    width: 100%;
+}
+
+/* .slider{
+    color: white;
+    background-color: brown;
+} */
