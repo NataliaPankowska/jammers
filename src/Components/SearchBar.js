@@ -14,7 +14,7 @@ const [searchInput,  setSearchInput] = useState('');
 
 return(
     <>
-        <SearchResults result={searchInput}/>
+        <SearchResults input={searchInput}/>
        <div className='search'>
         <div className='searchInput'>
         <input id="search" type="text" placeholder="search" onChange={handleType} value={searchInput}/>

@@ -37,7 +37,8 @@ const data = [
         artist: 'Kazik Staszewski'
     }
 ];
-function SearchResults({result}){
+function SearchResults({input}){
+    // const {input }= props;
 const [searchResult, setSearchResult] = useState([]);
 // const selectedData = [];
 // for (let i = 0; i < data.length; i++) {
@@ -49,11 +50,13 @@ const [searchResult, setSearchResult] = useState([]);
 
 
 useEffect(() => {
-    const newResult = data.filter((item) => {
-        return item.title.includes({result})
+   const newSearchResult = data.filter((item) => {
+        return item.title.toLowerCase().includes(input.toLowerCase())
 });
-    console.log({result});
-    setSearchResult(newResult)}, [{result}]);
+    console.log(newSearchResult);
+    setSearchResult(() => {
+       return newSearchResult
+    })}, [input]);
 // setSearchResult(selectedData);
 // function handleClick() {
 //     // console.log('bbb')
@@ -62,11 +65,11 @@ useEffect(() => {
 
 return (
     <>
-   <h1>{searchResult}</h1>
+   
    {/* <button onClick={handleClick}>consolelog</button> */}
     <div className='searchResults'>
          
-        {data.map((song) => 
+        {searchResult.map((song) => 
             <div className='result'>
                 <h2 className='title'>{song.title}</h2> 
                 <h2 className='artist'>{song.artist}</h2>
