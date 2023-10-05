@@ -38,22 +38,23 @@ const data = [
     }
 ];
 function SearchResults({result}){
-const [searchResult, setSearchResult] = useState();
-const selectedData = [];
-for (let i = 0; i < data.length; i++) {
-    const item = data[i];
-    selectedData.push(item.title)
+const [searchResult, setSearchResult] = useState([]);
+// const selectedData = [];
+// for (let i = 0; i < data.length; i++) {
+//     const item = data[i];
+//     selectedData.push(item.title);
     
-}
-selectedData.filter((item) => {
-    return item.includes()
-})
+// }
 
 
-useEffect(() => setSearchResult(selectedData));
+
+useEffect(() => {
+    const newResult = data.filter((it) => it.title.includes({result}));
+    console.log(newResult);
+    setSearchResult(newResult)}, [{result}]);
 // setSearchResult(selectedData);
 function handleClick() {
-    console.log(selectedData)
+    console.log('bbb')
 }
 
 
